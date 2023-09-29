@@ -1,0 +1,212 @@
+ @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500&display=swap');
+
+ *{
+        margin: 0px;
+        padding: 0px;
+        font-family: 'Poppins', sans-serif;
+        box-sizing:border-box
+
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #43affc;
+}
+
+.wrapper {
+    background-color: aliceblue;
+    padding: 25px;
+    border: 2px;
+    border-color: black;
+    border-radius: 7px;
+}
+
+.wrapper header {
+
+    color: #43affc;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 25px;
+    font-weight: 500;
+    border-bottom: 1px solid #bfbfbf;
+}   
+
+header i {
+    cursor: pointer;
+    font-size: 0px;
+    margin-right: 5px;    
+}
+.wrapper.active header i{
+    font-size: 30px;
+    margin-left: 5px;
+}
+.wrapper .input-part {
+    margin: 25px 25px 30px;
+    padding: 0px;
+}
+.wrapper.active .input-part{
+    display: none;
+}
+.input-part .info-txt{
+
+    font-size: 15px;
+    border-radius: 4px;
+    text-align: center;
+    padding: 12px 10px;
+    margin-left: 6px;
+    border-radius: 4px;
+
+}
+
+.info-txt.error{
+
+    display: block;
+    color:#721c24;
+    background-color: #f8d7da;
+    border: 1px solid  #f5c6cb;
+
+}
+.info-txt.pending{
+    display: block;
+    color:#0c5460;
+    background-color: #d1ecf1;
+    border: 1px solid  #bee5eb;
+
+}
+
+.input-part :where(input, button){
+    width: 100%;
+    height: 55px;
+    border: none;
+    outline: none;
+    margin: 4px;
+    text-align: center;
+}
+
+.input-part input{
+    border: 1px solid #bfbfbf;
+    border-radius: 4px;
+    text-align: center;
+}
+.input-part input:is(:focus, :valid){
+    border: 2px #43affc solid ;
+}
+
+.input-part button{
+
+    border: 1px solid #bfbfbf;
+    border-radius: 4px;
+    color: white;
+    background-color: #43affc;
+    cursor: pointer;
+}
+
+.input-part .seperator{
+
+    height: 1px;
+    width: 100%;
+    margin: 25px 0px;
+    background-color:#ccc;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+/* class ismi ve fonksyonda kullandığımız :: arasında boşluk bırkmamak gerkiyormuş acı tecrübe ile öğrendim */
+.seperator::before{   
+    content: 'veya';
+    background-color:aliceblue;
+    color:#ccc;
+    padding: 0 15px;
+    font-size: 15px;
+}
+
+/* ----- Weather Part */
+
+.wrapper .weather-part{
+
+    margin: 30px 0px 0px;
+     display:none;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.wrapper.active .weather-part{
+    display:flex;
+}
+
+.weather-part img{
+
+    max-width: 125px;
+}
+
+.weather-part .temp{
+
+    display: flex;
+    font-size: 60px;
+    font-weight: 500;
+}
+.weather-part .temp .numb{
+
+    font-weight: 600;
+}
+
+.weather-part .temp .deg{
+
+    font-weight: 300;
+    font-size: 40px;
+    margin: 5px 0px 0px;
+    display: block;
+}
+.weather-part .location{
+    display: flex;
+    align-items: center;
+    font-size: 21px;
+    margin-bottom: 30px;
+}
+.location i{
+    font-size: 22px;
+    margin-right: 10px;
+}
+
+/* Bottom Details */
+
+.weather-part .bottom-details{
+
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content:space-between;
+    border-top: 1px solid #bfbfbf;
+
+}
+.bottom-details .column{
+
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+.column i{
+    color: #43affc;
+    font-size: 35px;
+}
+.column.humidity{
+    border-left: 1px solid #bfbfbf;
+}
+.details .temp, .humidity span{
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.details .temp .deg{
+    margin: 0px;
+    font-size: 17px;
+    padding: 0px  2px 0px 1px;
+}
+
